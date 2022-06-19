@@ -10,63 +10,84 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/x-icon"
+    />
   </head>
+
   <body>
     <main>
       <div class="intro">
         <h1>Learn to code by watching others</h1>
-        <p>See how experienced developers solve problems in real-time.</p>
-        <p>
-          Watching scripted tutorials is great, but understanding how developers
-          think is invaluable.
-        </p>
+
+        <h5>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great but understanding how developers think is
+          invaluable.
+        </h5>
       </div>
-      <div class="container">
-        <div class="form-top">
-          <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
-        </div>
-        <div class="form-div">
+
+      <div class="form-section">
+        <button type="submit" class="form-top">
+          Try it free 7 days<span> then $20/mo. thereafter</span>
+        </button>
+        <div class="form">
           <form action="">
-            <input
-              type="text"
-              id="fname"
-              name="fname"
-              placeholder="First Name"
-              maxlength="20"
-              minlength="3"
-              required
-            />
-            <input
-              type="text"
-              id="lname"
-              name="lname"
-              placeholder="Last Name"
-              maxlength="20"
-              minlength="3"
-              required
-            />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email Address"
-              required
-            />
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-              required
-            />
-            <button type="submit">CLAIM YOUR FREE TRIAL</button>
+            <div class="entry-field" data-error="First Name cannot be empty">
+              <i href="icon-error.svg"></i>
+              <input
+                type="text"
+                placeholder="First Name"
+                id="fname"
+                class="input"
+              />
+            </div>
+            <div class="entry-field" data-error="Last Name cannot be empty">
+              <input
+                type="text"
+                placeholder="Last Name"
+                id="lname"
+                class="input"
+              />
+            </div>
+            <div
+              class="entry-field"
+              data-error="Looks like this is not an email"
+            >
+              <input
+                type="email"
+                placeholder="Email Address"
+                id="email"
+                class="input"
+              />
+            </div>
+            <div class="entry-field" data-error="Password cannot be empty">
+              <input
+                type="password"
+                name=""
+                placeholder="Password"
+                id="pword"
+                class="input"
+              />
+            </div>
+            <button type="submit" value="submit">CLAIM YOUR FREE TRIAL</button>
+            <h6>
+              By clicking the button, you are agreeing to our
+              <span>TERMS AND SERVICES</span>
+            </h6>
           </form>
-          <h6>
-            By clicking the button, you are agreeing to our
-            <span>Terms and Services</span>
-          </h6>
         </div>
       </div>
     </main>
+
+    <script>
+      document.querySelectorAll(".long[data-error] .input").forEach((inpEl) => {
+        inpEl.addEventListener("input", () =>
+          inpEl.parentElement.removeAttribute("data-error")
+        );
+      });
+    </script>
   </body>
 </html>

@@ -3,25 +3,197 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  height: 100%;
+  width: auto;
+}
+
 body {
   max-width: 1440px;
-  font-family: "Poppins", sans-serif;
   font-size: 16px;
-  height: 100vh;
-  display: flex;
 }
 
 main {
-  width: 50%;
-  margin: auto;
-  display: flex;
-}
-/* h1 */
-.intro p {
-  font-size: 0.8em;
-}
-form-div {
-}
-.comtainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background: url(images/bg-intro-desktop.png) no-repeat;
+  background-size: cover;
+  height: 100vh;
   align-items: center;
+  padding: 100px;
+  background-color: hsl(0, 100%, 74%);
+  background-blend-mode: luminosity;
+  font-family: "Poppins", sans-serif;
+}
+
+main h1 {
+  line-height: 50px;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  justify-content: space-evenly;
+  padding: 30px;
+  border-radius: 10px;
+  height: 400px;
+  box-shadow: 0 5px rgba(181, 99, 103, 0.5);
+}
+
+form input,
+form button {
+  height: 40px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #ebf5df;
+  border-style: solid;
+  font-weight: 600;
+  outline: none;
+  width: 100%;
+}
+
+.form form input:focus {
+  border-style: solid;
+  border-width: 1px;
+  border-color: hsl(249, 10%, 26%);
+}
+
+.entry-field[data-error] .input {
+  border-color: #c92432;
+  color: #c92432;
+  background: url(images/icon-error.svg) no-repeat scroll 7px 7px;
+  background-position: 95% 50%;
+}
+
+.entry-field[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.5em;
+  color: hsl(0, 100%, 74%);
+  display: flex;
+  justify-content: flex-end;
+  font-style: italic;
+}
+
+form button {
+  background-color: hsl(154, 59%, 51%);
+  border-style: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #71daad;
+}
+
+form input {
+  padding: 20px;
+  font-size: 0.75em;
+}
+
+.form-section > button {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border-style: none;
+  margin-bottom: 15px;
+  background-color: hsl(248, 32%, 49%);
+  color: white;
+  box-shadow: 0 5px rgba(181, 99, 103, 0.5);
+}
+
+.intro {
+  color: white;
+  padding: 90px;
+}
+
+h6 {
+  color: hsl(246, 25%, 77%);
+  text-align: center;
+  font-size: 0.58rem;
+}
+
+form h6 {
+  font-weight: 500;
+}
+
+form h6 span {
+  color: hsl(0, 100%, 74%);
+  font-weight: 700;
+}
+
+.form-section {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.intro h1 {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.intro h5 {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+.form-section > button {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-section > button span {
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: hsl(246, 25%, 77%);
+}
+
+/* Media Query and Responsiveness */
+
+@media (max-width: 375px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    background: url(images/bg-intro-mobile.png) no-repeat;
+    background-size: cover;
+    height: auto;
+    align-items: center;
+    background-color: hsl(0, 100%, 74%);
+    background-blend-mode: luminosity;
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+  }
+  .intro {
+    padding: 10px;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  main h1 {
+    font-size: 1.7em;
+    text-align: center;
+    margin-top: 50px;
+  }
+  main h5 {
+    text-align: center;
+    line-height: 25px;
+    font-weight: 700;
+  }
+
+  .form-section .form-top {
+    width: 90vw;
+    height: 80px;
+    margin-top: 40px;
+    border-radius: 10px;
+    border-bottom: 30px;
+  }
+
+  form {
+    height: 500px;
+    margin: 20px auto 50px;
+  }
 }
