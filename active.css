@@ -63,6 +63,22 @@ form button {
   border-color: var(--Dark-Blue);
 }
 
+.long[data-error] .input {
+  border-color: #c92432;
+  color: #c92432;
+  background: url(icon-error.svg) no-repeat scroll 7px 7px;
+  background-position: 95% 50%;
+}
+
+.long[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.5em;
+  color: hsl(0, 100%, 74%);
+  display: flex;
+  justify-content: flex-end;
+  font-style: italic;
+}
+
 form button {
   background-color: var(--Green);
   border-style: none;
@@ -141,11 +157,6 @@ main h1 {
   line-height: 50px;
   margin-bottom: 20px;
   font-size: 2.5em;
-}
-
-a {
-  text-decoration: none;
-  color: white;
 }
 
 @media (max-width: 1000px) {
